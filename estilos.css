@@ -1,0 +1,171 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+h1{
+	font-weight: 400;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 40px;
+}
+
+p {
+	font-weight: 400;
+	text-align: center;
+	font-size: 30px;
+}
+
+.line {
+	background: #ccc;
+	height: 5px;
+	width: 100%;
+	display: block;
+}
+
+.galeria {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	width: 90%;
+	margin: auto;
+	grid-gap: 10px;
+	padding: 40px 0;
+	overflow: hidden;
+}
+
+.galeria > a {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.galeria a:hover img {
+	filter: blur(2px);
+	transform: rotate(10deg) scale(1.3);
+}
+
+
+.galeria img {
+	width: 100%;
+	vertical-align: top;
+	height: 300px;
+	object-fit: cover;
+	transition: transform 0.5s;
+}
+
+.light-box {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	background: rgba(0, 0, 0, .5);
+	width: 100%;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0);
+	transition: transform .3s ease-in-out;
+}
+
+.light-box img {
+	width: 75vw;
+	max-height: 70vh;
+}
+
+.light-box:target {
+	transform: scale(1);
+}
+
+.close{
+	display: block;
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	background: #851919;
+	color: #fff;
+	text-decoration: none;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.next {
+	margin: 20px;
+	display: block;
+	background: #851919;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.footer {
+	width: 100%;
+	font-size: 26px;
+	color: #fff;
+	margin: 1em 0 0em 0;
+	padding: 20px;
+	text-align: center;
+	background: #303841;
+	display: flex;
+	flex-direction: column;
+	  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-container ul {
+    display: flex;
+}
+
+.redes-container ul li {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    list-style: none;
+}
+
+.redes-container ul li a {
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .2);
+    transition: .2s;
+}
+
+.instagram {
+       background-color: #e4405f;
+}
+
+.github {
+    background-color: #000;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+@media screen and(max-width:400px){
+	.galeria {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+
+	.close {
+		top: 20px;
+		right: 20px;
+	}
+}
